@@ -6,10 +6,9 @@ require_once "session.php";
 
 $error = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-
+    
     // validate if email is empty
     if (empty($email)) {
         $error .= '<p class="error">Please enter email.</p>';
@@ -23,9 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if (empty($error)) {
         if($query = $db->prepare("SELECT * FROM users WHERE email = ?")) {
             $query->bind_param('s', $email);
-            $query->execute();
-            $row = $query->fetch();
-            if ($row) {
+            $query->execute();  
+            $result = $query->get_result();
+            if ($row = $result->fetch_assoc()) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION["userid"] = $row['id'];
                     $_SESSION["user"] = $row;
