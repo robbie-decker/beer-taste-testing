@@ -16,7 +16,7 @@ function myFunction() {
   }
 }
 </script>
-<?php $conn->close(); ?>
+<?php $db->close(); ?>
 </body>
 <footer><br><center>All Rights Reserved QuickCaliber <?php echo date("Y"); ?><br>Terms and Conditions</center><br></footer>
 </html>

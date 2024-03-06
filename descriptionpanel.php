@@ -7,7 +7,7 @@ include "panelheader.php";
 
 
   $sql = "SELECT * FROM panels WHERE id = '$panel_id'";
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
@@ -215,7 +215,7 @@ slider.oninput = function() {
 
 <?php 
   $sql = "SELECT topic FROM questions WHERE type = 'aroma' ORDER BY rand()";
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
@@ -402,7 +402,7 @@ if ($result->num_rows > 0) {
 
 <?php 
   $sql = "SELECT topic FROM questions WHERE type = 'off' ORDER BY rand()";
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row

@@ -76,12 +76,12 @@ include "config.php";
 
 $sql = "INSERT INTO result(id_panel, id_user, distractions, ebc, offcolor, clarity, head_texture, head_retention, visual_carb, alc_aroma, flavors, alc_taste, sweet_taste, bitter_taste, acid_taste, balance, astringency, carb, body, finish, offflavor, style, favorability, notes)VALUES('$id_panel', '$id_user', '$distractions', '$ebc', '$offcolor', '$clarity', '$head_texture', '$head_retention', '$visual_carb', '$alc_aroma', '$flavors', '$alc_taste', '$sweet_taste', '$bitter_taste', '$acid_taste', '$balance', '$astringency', '$carb' , '$body', '$finish', '$offflavor', '$style', '$favorability', '$notes')";
 
-if ($conn->query($sql) === TRUE) {
+if ($db->query($sql) === TRUE) {
 //  echo $sql;
   //GET THE result_id from the results just added above.
-    $last_id = $conn->insert_id;
+    $last_id = $db->insert_id;
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $db->error;
 }
 
 
@@ -92,7 +92,7 @@ $categories = "";
 $values = "";
 
 $sql = "SELECT topic FROM questions";
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
@@ -136,10 +136,10 @@ include "config.php";
 
 $sql = "INSERT INTO result_sensory($categories)VALUES('$last_id', '$allvalues)";
 
-if ($conn->query($sql) === TRUE) {
+if ($db->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $db->error;
 }
 
 

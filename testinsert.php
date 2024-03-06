@@ -7,7 +7,7 @@ include "config.php";
 $id_result = $GET_result;
 
   $sql = "SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS`";
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
