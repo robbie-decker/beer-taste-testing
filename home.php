@@ -1,7 +1,7 @@
 <?php include "header.php"; ?>
     
     <!-- Get User Panels = NOT DONE -->
-    <!-- Loop Display button for Not done panels --><center><a href="/beginpanel.php"><button class="button"><h3>$samplecode: $paneltype</h3></button></a></center>
+    <!-- Loop Display button for Not done panels --><center><a href="./beginpanel.php"><button class="button"><h3>$samplecode: $paneltype</h3></button></a></center>
     <!-- End Panels List -->
     
     

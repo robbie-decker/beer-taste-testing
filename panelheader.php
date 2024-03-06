@@ -21,7 +21,7 @@
 
 <!-- Top Navigation Menu -->
 <div class="topnav">
-  <a href="/home.php" class="active">< Exit Panel (all progress will be lost)</a>
+  <a href="./home.php" class="active">< Exit Panel (all progress will be lost)</a>
   </div>
 <p class='code'>Panel ID: <?php echo $panel_id; ?></p>
     <div class="package">
