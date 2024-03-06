@@ -468,8 +468,8 @@ include 'style_dropdown.php';
 </div>
 </form>
 
+<script type="text/javascript" src="multipage.js"></script>;
 <?php
-include 'multipage.js';
 ?>
 
 <!-- End of test -->
